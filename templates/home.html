@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardianes - Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylehome.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="{{ url_for('home') }}" class="header-link">Inicio</a>
+            <a href="{{ url_for('register') }}" class="header-link">Registrar Usuario</a>
+            <a href="{{ url_for('login') }}" class="header-link">Iniciar Sesión</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="main-logo">
+        </div>
+        <h1>¡Bienvenido a Guardianes del Ecosistema!</h1>
+        <p>Un sistema de trazabilidad de plantas. Utiliza el menú para navegar por el sistema.</p>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+</body>
+</html>

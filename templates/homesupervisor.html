@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardianes - Supervisor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleregistroplanta.css') }}">
+
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Guardianes del Ecosistema - Sistema de Trazabilidad de Plantas</h1>
+            <nav>
+                <a href="{{ url_for('registroplanta') }}" class="header-link">Registrar Planta</a>
+                <a href="{{ url_for('consultar') }}" class="header-link">Consultar Información</a>
+                <a href="{{ url_for('login') }}" class="header-link">Cerrar Sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Bienvenido a Guardianes del Sistema</h2>
+            <p>Esta plataforma te permite registrar y hacer seguimiento a cada planta en el vivero desde su germinación hasta su crecimiento final.</p>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h3>Registro de Plantas</h3>
+                <p>Asigna un tag único a cada planta y registra detalles como especie, fecha de germinación y condiciones iniciales de crecimiento.</p>
+                <a href="{{ url_for('register') }}" class="btn">Registrar Planta</a>
+            </div>
+            <div class="feature">
+                <h3>Consulta de Información</h3>
+                <p>Consulta la información almacenada sobre las plantas del vivero y sigue su evolución.</p>
+                <a href="{{ url_for('consultar') }}" class="btn">Consultar Plantas</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Guardianes del ecosistema - Sistema de Trazabilidad de Plantas</p>
+    </footer>
+</body>
+</html>

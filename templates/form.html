@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Planta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Guardianes del Ecosistema - Sistema de Trazabilidad de Plantas</h1>
+            <nav>
+                <a href="{{ url_for('form') }}" class="header-link">Registrar Planta</a>
+                <a href="{{ url_for('consultar') }}" class="header-link">Consultar Información</a>
+                <a href="{{ url_for('login') }}" class="header-link">Cerrar Sesión</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="login-container">
+        <h2>Registrar Planta</h2>
+        <form action="/form" method="post">
+            <div class="input-group">
+                <label for="plant_name">Nombre de la planta:</label>
+                <input type="text" id="plant_name" name="plant_name" required>
+            </div>
+            <div class="input-group">
+                <label for="scientific_name">Nombre científico:</label>
+                <input type="text" id="scientific_name" name="scientific_name" required>
+            </div>
+            <div class="input-group">
+                <label for="species">Especie:</label>
+                <input type="text" id="species" name="species" required>
+            </div>
+            <div class="input-group">
+                <label for="germination_estimate">Estimado de germinación:</label>
+                <input type="text" id="germination_estimate" name="germination_estimate" required>
+            </div>
+            <div class="input-group">
+                <label for="seedling_estimate">Estimado de plántula:</label>
+                <input type="text" id="seedling_estimate" name="seedling_estimate" required>
+            </div>
+            <div class="input-group">
+                <label for="growth_estimate">Estimado de crecimiento:</label>
+                <input type="text" id="growth_estimate" name="growth_estimate" required>
+            </div>
+            <div class="input-group">
+                <label for="maturity_estimate">Estimado de madurez:</label>
+                <input type="text" id="maturity_estimate" name="maturity_estimate" required>
+            </div>
+            <button type="submit">Registrar Planta</button>
+        </form>
+    </div>
+</body>
+</html>

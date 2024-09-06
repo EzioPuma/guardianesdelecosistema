@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stylehomesupervisor.css') }}">
+    <title>Formulario de Registro de Planta</title>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Guardianes del Ecosistema - Sistema de Trazabilidad de Plantas</h1>
+            <nav>
+                <a href="{{ url_for('registroplanta') }}" class="header-link">Registrar Planta</a>
+                <a href="{{ url_for('consultar') }}" class="header-link">Consultar Información</a>
+                <a href="{{ url_for('login') }}" class="header-link">Cerrar Sesión</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Formulario de Registro de Planta</h2>
+        <form action="{{ url_for('formulario') }}" method="POST">
+            <div class="form-group">
+                <label for="operador">Operador:</label>
+                <input type="text" id="operador" name="operador" value="{{ session['usuario'] }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="fecha_hora">Fecha y Hora:</label>
+                <input type="text" id="fecha_hora" name="fecha_hora" value="{{ now }}" readonly>
+            </div>
+            <div class="form-group">
+                <label for="id_planta">ID de la Planta:</label>
+                <input type="text" id="id_planta" name="id_planta" required>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <input type="text" id="estado" name="estado" required>
+            </div>
+            <div class="form-group">
+                <label>Observaciones:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="ok" name="estado" value="OK">
+                    <label for="ok">OK</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="observaciones" name="observaciones" value="Observaciones">
+                    <label for="observaciones">Observaciones</label>
+                </div>
+                <textarea id="observaciones_text" name="observaciones" placeholder="Escribe tus observaciones aquí..." style="display: none;"></textarea>
+            </div>
+            <button type="submit" class="btn">Aceptar</button>
+        </form>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Guardianes del Ecosistema - Sistema de Trazabilidad de Plantas</p>
+    </footer>
+
+    <script>
+        document.getElementById('observaciones').addEventListener('change', function() {
+            document.getElementById('observaciones_text').style.display = this.checked ? 'block' : 'none';
+        });
+    </script>
+</body>
+</html>
